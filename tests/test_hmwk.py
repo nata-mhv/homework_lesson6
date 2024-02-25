@@ -8,11 +8,12 @@ def test_dark_theme_by_time():
     current_time = time(hour=23)
     lower_limit = time(hour=22)
     upper_limit = time(hour=6)
+    is_dark_theme = False
 
     if current_time >= lower_limit or current_time <= upper_limit:
         is_dark_theme = True
         print("Dark theme is on")
-        assert is_dark_theme is True
+    assert is_dark_theme is True
 
 def test_dark_theme_by_time_and_user_choice():
     """
@@ -25,9 +26,9 @@ def test_dark_theme_by_time_and_user_choice():
     current_time = time(hour=16)
     lower_limit = time(hour=22)
     upper_limit = time(hour=6)
-    dark_theme_enabled_by_user = False
+    dark_theme_enabled_by_user = True
 
-    if dark_theme_enabled_by_user or dark_theme_enabled_by_user is None:
+    if dark_theme_enabled_by_user is False or dark_theme_enabled_by_user is None:
         if current_time >= lower_limit or current_time <= upper_limit:
             is_dark_theme = True
             print("Dark theme is on")
@@ -36,7 +37,7 @@ def test_dark_theme_by_time_and_user_choice():
             print("Dark theme is off")
     else:
         is_dark_theme = True
-        print("Dark theme is on")
+        print("Dark theme is on by user")
     assert is_dark_theme is True
 
 
